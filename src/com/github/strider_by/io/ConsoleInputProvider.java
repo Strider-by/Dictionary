@@ -26,14 +26,12 @@ public class ConsoleInputProvider implements InputProvider {
     @Override
     public String read() {
         String input = scanner.next().trim();
-        clear();
         return input;
     }
 
     @Override
     public String readLine() {
         String input = scanner.nextLine();
-        clear();
         return input;
     }
 
@@ -43,12 +41,7 @@ public class ConsoleInputProvider implements InputProvider {
         while(scanner.hasNextLine()) {
             lines.add(scanner.nextLine());
         }
-        clear();
         return lines;
-    }
-    
-    private void clear() {
-        this.scanner = new Scanner(System.in, encoding);
     }
   
     @Override
